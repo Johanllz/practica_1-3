@@ -24,9 +24,24 @@ class Position {
 }
 //Clase ProgramWindow
 //3
+class ProgramWindow {
+    constructor() {
+        this.screenSize = new Size(800, 600);
+        this.size = new Size(0, 0); // Tamaño inicial por defecto
+        this.position = new Position(0, 0); // Posición inicial por defecto
+    }
+}
+
 class Size {
-    constructor(width = 800, height=600) {
+    constructor(width, height) {
         this.width = width;
         this.height = height;
+    }
+}
+
+class Position {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
     }
 }
