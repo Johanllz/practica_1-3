@@ -1,18 +1,24 @@
-// Definir la clase Size
-function Size(width = 80, height = 60) {
-    this.width = width;
-    this.height = height;
+// Definir la clase Size usando constructor y la clase posicion
+class Size {
+    constructor(width = 80, height = 60) {
+        this.width = width;
+        this.height = height;
+    }
+
+    resize(newWidth, newHeight) {
+        this.width = newWidth;
+        this.height = newHeight;
+    }
 }
 
-// Método para cambiar el tamaño
-Size.prototype.resize = function(newWidth, newHeight) {
-    this.width = newWidth;
-    this.height = newHeight;
-};
+class Position {
+    constructor(x = 0, y = 0) {
+        this.x = x;
+        this.y = y;
+    }
 
-// Ejemplo de uso
-const ventana = new Size(); // crea una ventana con dimensiones por defecto (80x60)
-console.log("Dimensiones iniciales:", ventana.width, "x", ventana.height);
-
-ventana.resize(100, 80); // cambia el tamaño de la ventana
-console.log("Dimensiones después de cambiar:", ventana.width, "x", ventana.height);
+    move(newX, newY) {
+        this.x = newX;
+        this.y = newY;
+    }
+}
