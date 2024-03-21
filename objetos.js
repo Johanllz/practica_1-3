@@ -22,3 +22,11 @@ class Position {
         this.y = newY;
     }
 }
+//Clase ProgramWindow
+//3
+class Size {
+    constructor(width = 800, height=600) {
+        this.width = width;
+        this.height = height;
+    }
+}
