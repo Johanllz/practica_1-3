@@ -88,3 +88,33 @@ console.log("Posición después de mover la pantalla:", window.position.x, ",", 
 changeWindow(window);
 console.log("Posición después de usar changeWindow:", window.position.x, ",", window.position.y);
 console.log("Tamaño después de usar changeWindow:", window.size.width, "x", window.size.height);
+
+//Apartado Final.
+const size = new Size(1080,764);
+console.log(size.width);
+console.log(size.height);
+size.resize(1920,1080);
+console.log(size.width);
+console.log(size.height);
+
+
+
+const point = new Position();
+console.log(point.x);
+console.log(point.y);
+point.move(100,200);
+console.log(point.x);
+console.log(point.y);
+
+const programWindow = new ProgramWindow();
+console.log(programWindow.screenSize.width);
+const newSize = new Size(600,400);
+programWindow.resize(newSize);
+console.log(programWindow.size.width);
+console.log(programWindow.size.height);
+const newPosition = new Position(50,100);
+programWindow.move(newPosition);
+console.log(programWindow.position.x);
+console.log(programWindow.position.y);
+changeWindow(programWindow);
+console.log(programWindow.size.width);
