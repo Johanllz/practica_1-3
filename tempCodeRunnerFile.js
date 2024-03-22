@@ -12,7 +12,7 @@ class Size {
 }
 
 class Position {
-    constructor(x = 0, y = 0) {
+    constructor(x = 250, y = 100) {
         this.x = x;
         this.y = y;
     }
@@ -37,8 +37,8 @@ class ProgramWindow {
         newSize.height = Math.max(newSize.height, 1);
 
         // Limitar el tamaño máximo al tamaño de la pantalla desde la posición actual de la ventana
-        const maxWidth = (this.screenSize.width - this.position.x) + this.position.x;
-        const maxHeight = (this.screenSize.height - this.position.y) + this.position.y;
+        const maxWidth = this.screenSize.width - this.position.x;
+        const maxHeight = this.screenSize.height - this.position.y;
         newSize.width = Math.min(newSize.width, maxWidth);
         newSize.height = Math.min(newSize.height, maxHeight);
 
@@ -46,17 +46,15 @@ class ProgramWindow {
         this.size = newSize;
     }
     move(newPosition){
-        // Comprueba que los valores de la posición no sean menores que 0
         if( newPosition.x < 0 ){
             newPosition.x = 0;
         }
         if( newPosition.y < 0 ){
             newPosition.y = 0;
         }
-        // Ajusta los valores de la posición de acuerdo al tamaño de la ventana
         else{
-            const maxValueX = (this.screenSize.width - this.position.x);
-            const maxValueY = (this.screenSize.height - this.position.y);
+            const maxValueX = (this.screenSize.width - this.position.x) + this.position.x;
+            const maxValueY = (this.screenSize.height - this.position.y) + this.position.y;
             if( newPosition.x > maxValueX ){
                 newPosition.x = maxValueX;
             }
@@ -65,7 +63,6 @@ class ProgramWindow {
                 newPosition.y = maxValueY;
             }
         }
-        this.position = newPosition;
     }
 }
 
@@ -73,8 +70,8 @@ class ProgramWindow {
 
 const window = new ProgramWindow();
 console.log("Tamaño actual:", window.size.width, "x", window.size.height);
-window.resize(new Size(250, 100));
+window.resize(new Size(400, 500));
 console.log("Tamaño después de redimensionar:", window.size.width, "x", window.size.height);
 console.log("Posición actual:", window.position.x, ",", window.position.y);
-window.move(new Position(600, 200));
+window.resize(new Position(600, 200));
 console.log("Posición después de mover la pantalla:", window.position.x, ",", window.position.y);
