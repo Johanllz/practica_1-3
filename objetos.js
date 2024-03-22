@@ -95,7 +95,10 @@ changeWindow(window);
 console.log("Posición después de usar changeWindow:", window.position.x, ",", window.position.y);
 console.log("Tamaño después de usar changeWindow:", window.size.width, "x", window.size.height);
 
-//Apartado Final.
+
+
+
+//Apartado Final Aqui se Evalua lo ultimo_______________________________________________________________________________________________________________________________________________________
 console.log(""); // Imprime un espacio en blanco
 
 const size = new Size(1080,764);
