@@ -121,8 +121,6 @@ console.log(point.x);
 console.log(point.y);
 
 console.log(""); // Imprime un espacio en blanco
-
-console.log(""); // Imprime un espacio en blanco
 //Redimensiona la pantalla, la mueve y verifica el tamaño de esta
 const programWindow = new ProgramWindow();
 console.log(programWindow.screenSize.width);
