@@ -27,8 +27,8 @@ class Position {
 class ProgramWindow {
     constructor() {
         this.screenSize = new Size(800, 600);
-        this.size = new Size(0, 0); // Tamaño inicial por defecto
-        this.position = new Position(0, 0); // Posición inicial por defecto
+        this.size = new Size(); // Tamaño inicial por defecto
+        this.position = new Position(); // Posición inicial por defecto
     }
 
     resize(newSize) {
