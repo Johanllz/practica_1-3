@@ -23,7 +23,7 @@ class Position {
     }
 }
 //Clase ProgramWindow
-//3
+//3 y 4
 class ProgramWindow {
     constructor() {
         this.screenSize = new Size(800, 600);
@@ -45,6 +45,7 @@ class ProgramWindow {
         // Redimensionar la ventana
         this.size = newSize;
     }
+    //5 Move window
     move(newPosition){
         // Comprueba que los valores de la posición no sean menores que 0
         if( newPosition.x < 0 ){
@@ -68,7 +69,7 @@ class ProgramWindow {
         this.position = newPosition;
     }
 }
-
+//6 Change window
 function changeWindow(windowInstance){
     windowInstance.size.resize(400,300);
     windowInstance.position.move(100,150);
@@ -90,14 +91,19 @@ console.log("Posición después de usar changeWindow:", window.position.x, ",", 
 console.log("Tamaño después de usar changeWindow:", window.size.width, "x", window.size.height);
 
 //Apartado Final.
+console.log(""); // Imprime un espacio en blanco
+
 const size = new Size(1080,764);
 console.log(size.width);
 console.log(size.height);
+
+console.log(""); // Imprime un espacio en blanco
+
 size.resize(1920,1080);
 console.log(size.width);
 console.log(size.height);
 
-
+console.log(""); // Imprime un espacio en blanco
 
 const point = new Position();
 console.log(point.x);
@@ -106,15 +112,26 @@ point.move(100,200);
 console.log(point.x);
 console.log(point.y);
 
+console.log(""); // Imprime un espacio en blanco
+
 const programWindow = new ProgramWindow();
 console.log(programWindow.screenSize.width);
+
+console.log(""); // Imprime un espacio en blanco
+
 const newSize = new Size(600,400);
 programWindow.resize(newSize);
 console.log(programWindow.size.width);
 console.log(programWindow.size.height);
+
+console.log(""); // Imprime un espacio en blanco
+
 const newPosition = new Position(50,100);
 programWindow.move(newPosition);
 console.log(programWindow.position.x);
 console.log(programWindow.position.y);
+
+console.log(""); // Imprime un espacio en blanco
+
 changeWindow(programWindow);
 console.log(programWindow.size.width);
