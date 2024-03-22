@@ -56,8 +56,11 @@ class ProgramWindow {
         }
         // Ajusta los valores de la posición de acuerdo al tamaño de la ventana
         else{
+            // Establece valores limites para x y
             const maxValueX = (this.screenSize.width - this.position.x);
             const maxValueY = (this.screenSize.height - this.position.y);
+
+            // Si el nuevo valor de las posiciones es mayor al valor maximo se establece el valor máximo
             if( newPosition.x > maxValueX ){
                 newPosition.x = maxValueX;
             }
@@ -66,10 +69,12 @@ class ProgramWindow {
                 newPosition.y = maxValueY;
             }
         }
+        //Mueve la ventana
         this.position = newPosition;
     }
 }
 //6 Change window
+//Llama a las funciones size y move de la intancia de ProgramWindow para usar sus metodos
 function changeWindow(windowInstance){
     windowInstance.size.resize(400,300);
     windowInstance.position.move(100,150);
@@ -79,8 +84,8 @@ function changeWindow(windowInstance){
 
 const window = new ProgramWindow();
 console.log("Tamaño actual:", window.size.width, "x", window.size.height);
-window.resize(new Size(250, 100));
-console.log("Tamaño después de redimensionar:", window.size.width, "x", window.size.height);
+window.resize(new Size(400, 300));
+//Comprueba el movimiento de la ventana
 console.log("Posición actual:", window.position.x, ",", window.position.y);
 window.move(new Position(600, 200));
 console.log("Posición después de mover la pantalla:", window.position.x, ",", window.position.y);
@@ -104,7 +109,7 @@ console.log(size.width);
 console.log(size.height);
 
 console.log(""); // Imprime un espacio en blanco
-
+//Mueve la ventana
 const point = new Position();
 console.log(point.x);
 console.log(point.y);
@@ -114,6 +119,8 @@ console.log(point.y);
 
 console.log(""); // Imprime un espacio en blanco
 
+console.log(""); // Imprime un espacio en blanco
+//Redimensiona la pantalla, la mueve y verifica el tamaño de esta
 const programWindow = new ProgramWindow();
 console.log(programWindow.screenSize.width);
 
