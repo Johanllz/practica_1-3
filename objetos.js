@@ -47,22 +47,10 @@ class ProgramWindow {
     }
 }
 
-class Size {
-    constructor(width, height) {
-        this.width = width;
-        this.height = height;
-    }
-}
 
-class Position {
-    constructor(x, y) {
-        this.x = x;
-        this.y = y;
-    }
-}
-/*
+
 const window = new ProgramWindow();
 console.log("Tamaño actual:", window.size.width, "x", window.size.height);
 window.resize(new Size(400, 500));
 console.log("Tamaño después de redimensionar:", window.size.width, "x", window.size.height);
-*/
+
