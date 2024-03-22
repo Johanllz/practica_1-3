@@ -69,6 +69,11 @@ class ProgramWindow {
     }
 }
 
+function changeWindow(windowInstance){
+    windowInstance.size.resize(400,300);
+    windowInstance.position.move(100,150);
+}
+
 
 
 const window = new ProgramWindow();
@@ -78,3 +83,8 @@ console.log("Tamaño después de redimensionar:", window.size.width, "x", window
 console.log("Posición actual:", window.position.x, ",", window.position.y);
 window.move(new Position(600, 200));
 console.log("Posición después de mover la pantalla:", window.position.x, ",", window.position.y);
+
+//Prueba changeWindow:
+changeWindow(window);
+console.log("Posición después de usar changeWindow:", window.position.x, ",", window.position.y);
+console.log("Tamaño después de usar changeWindow:", window.size.width, "x", window.size.height);
